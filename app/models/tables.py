@@ -4,19 +4,34 @@ print("entrou em tables")
 class User(db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column (db.String, unique = true)
+    username = db.Column (db.String, unique = True)
     password = db.Column(db.String)
     name = db.Column (db.String)
     email = db.Column(db.String)
+    teste = db.Column (db.String)
 
-    def __init__(self, username, password,name, email):
+    def __init__(self, username, password,name, email,teste):
        self.username = username
        self.password = password
        self.name = name
        self.email = email
+       self.teste = teste
     
     def __repr__(self):
         return "<User %r>" % self.username  
+
+class Test(db.Model):
+    __tablename__ = 'test'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column (db.String)
+    
+
+    def __init__(self,name):
+       self.name = name
+      
+    
+    def __repr__(self):
+        return "<Test %r>" % self.name
 
 
    

@@ -13,6 +13,6 @@ manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
 print ( "entrou em uniti_app")
-
+from app.models import tables 
 from app.controllers import default
 #from app.models import tables
